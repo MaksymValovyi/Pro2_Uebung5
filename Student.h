@@ -10,15 +10,18 @@ private:
     string nachname;
     string vorname;
     char gruppe;
+    string sort_scheme;
 
 public:
-    bool operator<(const Student& s);   //for sorting algorithm
+    
 
     Student(string name, string surname, char group)
     : nachname(name), vorname(surname), gruppe(group)
     {
 
     };
+
+    Student(){};
 
     void setNachname(string name)
     {
@@ -30,9 +33,14 @@ public:
         vorname = surname;
     }
 
-    void setGruppe(char group)
+    void setGroup(char group)
     {
         gruppe = group;
+    }
+
+    void setSortScheme(string scheme)
+    {
+        sort_scheme = scheme;
     }
 
     string getNachname() const
@@ -45,20 +53,25 @@ public:
         return vorname;
     }
 
-    char getGruppe() const
+    string getSortScheme() const
+    {
+        return sort_scheme;
+    }
+    
+    char getGroup() const
     {
         return gruppe;
     }
-
+    
+    //TO DO:
+    bool operator>(const Student& s);  //for sorting algorithm
 
 };
 
 //GLOBAL FUNCTIONS
 ostream& operator <<(ostream & os, const Student & s)
     {
-        os << s.getNachname() << " " << s.getVorname() << " " << s.getGruppe() << endl;
+        os << s.getNachname() << " " << s.getVorname() << " " << s.getGroup() << endl;
         return os;
     }
 
-void readStudents(string fname, vector<Student> &v);
-void shufflev(vector<Student> &v);
