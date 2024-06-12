@@ -32,7 +32,7 @@ void selection_sortv(vector<T>& v) {
     swap(v[min_index], v[i]); 
     }
 }
-
+//SHUFFLE VECTOR
 template <typename T>
 void shuffle_template(vector<T> &v) {
   int amount = v.size();
@@ -45,7 +45,7 @@ void shuffle_template(vector<T> &v) {
         v[i] = temp_element;
     } 
 }
-
+//SET SORT SCHEME
 template <typename T>
 void setSortScheme(vector<T>& v){
     string sort_scheme = "";
@@ -63,7 +63,7 @@ void setSortScheme(vector<T>& v){
         v[i].setSortScheme(sort_scheme);
     }
 }
-
+//SET OPPOSITE SORT SCHEME
 template <typename T>
 void setOppositeSortScheme(vector<T>& v){
     for(int i = 0; i < v.size(); i++){
@@ -74,7 +74,7 @@ void setOppositeSortScheme(vector<T>& v){
         }
     }
 }
-
+//INSERT SORT
 template <typename T>
 void InsertSort(vector<T>& v){
     for (int i = 1; i < v.size(); i++) {
@@ -87,7 +87,7 @@ void InsertSort(vector<T>& v){
         v[j] = temp;
     }
 }
-
+//BUBBLE SORT
 template <typename T>
 void BubbleSort(vector<T> &v){
     for(int i = 0; i < v.size(); i++){

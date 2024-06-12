@@ -77,80 +77,58 @@ void readStudents(string fname, vector<Student> &v) {
         v.push_back(temp_student);
     } 
 }
+
+void insertSortPart(vector<Student> &v) {
+    cout << "---------INSERT SORT(" <<v[1].getSortScheme()<< ")----------" << endl;
+    InsertSort(v);
+    print_container(v);
+    setOppositeSortScheme(v);
+
+    cout << endl << "JETZT NACH ANDERE SCHEME SORTIERT(" <<v[1].getSortScheme()<< ")" << endl << endl;
+    InsertSort(v);
+    print_container(v);
+    setOppositeSortScheme(v);
+}
+
+void shufflePart(vector<Student> &v){
+    cout << "===========SHUFFLE===========" << endl;
+    shuffle_template(v);
+    print_container(v);
+}
+
+void bubbleSortPart(vector<Student> &v){
+    cout << "-----BUBBLE SORT("<<v[1].getSortScheme()<<")------" << endl;
+    BubbleSort(v);
+    print_container(v);
+    setOppositeSortScheme(v);
+    
+    cout << endl << "JETZT NACH ANDERE SCHEME SORTIERT(" <<v[1].getSortScheme()<< ")" << endl << endl;
+    BubbleSort(v);
+    print_container(v);
+}
+
 void aufgabe_5_2(){
-    //IMPORTANT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-    //IT'S THE MOST UNREADEBLE CODE I'VE EVER WRITTEN
-
-    //I KNOW HOW TO FIX IT, BUT I'M TOO LAZY
-
     vector<Student> students;
-    readStudents("Studenten_kurz.txt", students);
-
+    readStudents("Studenten.txt", students);
     shuffle_template(students);
-
     cout << "SHUFFLED NOT SORTED" << endl << endl;
-
     print_container(students);
 
+    //teil 1
     setSortScheme(students);
-    cout << "--------------------INSERT SORT(" <<students[1].getSortScheme()<< ")------------------------------" << endl;
-    InsertSort(students);
-    print_container(students);
+    insertSortPart(students);
+    shufflePart(students);
+    bubbleSortPart(students);
 
-    setOppositeSortScheme(students);
-    cout << endl << "JETZT NACH ANDERE SCHEME SORTIERT(" <<students[1].getSortScheme()<< ")" << endl << endl;
-    InsertSort(students);
-    print_container(students);
-    setOppositeSortScheme(students);
-    cout << "====================SHUFFLE==============================" << endl;
-
-
-    shuffle_template(students);
-
-    print_container(students);
-
-    cout << "BUBBLE SORT" << endl;
-    cout << "---------------------BUBBLE SORT("<<students[1].getSortScheme()<<")-------------------------------" << endl;
-
-    BubbleSort(students);
-    print_container(students);
-    setOppositeSortScheme(students);
-    cout << endl << "JETZT NACH ANDERE SCHEME SORTIERT(" <<students[1].getSortScheme()<< ")" << endl << endl;
-    BubbleSort(students);
-    print_container(students);
-
-
+    //teil 2-
     cout << endl << endl << "Veraenderung der Reihenfolge" << endl;
     cout << "TEIL 2" << endl << endl;
-    cout << "=====================SHUFFLE==================================" << endl;
-    shuffle_template(students);
-    print_container(students);
 
-    cout << "--------------------INSERT SORT(" <<students[1].getSortScheme()<< ")------------------------------" << endl;
-    InsertSort(students);
-    print_container(students);
+    shufflePart(students);
+    insertSortPart(students);
+    shufflePart(students);
+    bubbleSortPart(students);
 
-    setOppositeSortScheme(students);
-    cout << endl << "JETZT NACH ANDERE SCHEME SORTIERT(" <<students[1].getSortScheme()<< ")" << endl << endl;
-    InsertSort(students);
-    print_container(students);
-    setOppositeSortScheme(students);
-
-    cout << "====================SHUFFLE==============================" << endl;
-    shuffle_template(students);
-
-    print_container(students);
-
-    cout << "BUBBLE SORT" << endl;
-    cout << "---------------------BUBBLE SORT("<<students[1].getSortScheme()<<")-------------------------------" << endl;
-
-    BubbleSort(students);
-    print_container(students);
-    setOppositeSortScheme(students);
-    cout << endl << "JETZT NACH ANDERE SCHEME SORTIERT(" <<students[1].getSortScheme()<< ")" << endl << endl;
-    BubbleSort(students);
-    print_container(students);
 
 }
 
